@@ -6,12 +6,20 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
+    "apps/*",
     "packages/*"
   ],
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
+    "@types/react": "^18.0.28",
     "eslint": "^8.34.0",
     "prettier": "^2.8.4",
-    "turbo": "^1.8.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "turbo": "^1.8.2",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@acerohernan/eslint-config-pancake": "^1.0.0"
   }
 }

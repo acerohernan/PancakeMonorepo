@@ -1,0 +1,24 @@
+{
+  "extends": "@acerohernan/eslint-config-pancake",
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "warn",
+      {
+        "devDependencies": []
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "react/function-component-definition": 0
+  },
+  "overrides": [
+    {
+      "files": ["jest.setup.js"],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "import/no-extraneous-dependencies": 0
+      }
+    }
+  ]
+}
