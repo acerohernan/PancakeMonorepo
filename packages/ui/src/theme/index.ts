@@ -1,12 +1,4 @@
-import {
-  Breackpoints,
-  Colors,
-  MediaQueries,
-  Radii,
-  Shadows,
-  Spacing,
-  ZIndices,
-} from "./types";
+import { Breackpoints, Colors, MediaQueries, Radii, Shadows, Spacing, ZIndices } from "./types";
 
 export interface PancakeTheme {
   siteWidth: number;

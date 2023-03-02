@@ -10,9 +10,10 @@
   ],
   "scripts": {
     "build": "rm -rf ./dist && rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist",
-    "lint": "eslint 'src/**/*.{js,ts,jsx,tsx}'",
+    "lint": "eslint src/**/*.{js,ts,jsx,tsx}",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "format": "prettier --write src/**/*.{js,ts,jsx,tsx}"
   },
   "author": "acerohernan",
   "license": "MIT",
@@ -23,6 +24,7 @@
     "@babel/core": "^7.21.0",
     "@rollup/plugin-typescript": "^11.0.0",
     "@rollup/plugin-url": "^8.0.1",
+    "@storybook/addon-a11y": "^6.5.16",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
@@ -34,11 +36,15 @@
     "@types/styled-components": "^5.1.26",
     "babel-loader": "^8.3.0",
     "rollup": "^2.47.0",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "themeprovider-storybook": "^1.8.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.6"
+  },
+  "dependencies": {
+    "styled-system": "^5.1.5"
   }
 }

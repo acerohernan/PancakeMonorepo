@@ -1,6 +1,5 @@
 import Head from "next/head";
-import { light, Button } from "@acerohernan/pancakeui";
-import { light as pancakeLight } from "@pancakeswap/uikit";
+import { Button } from "@acerohernan/pancakeui";
 
 export default function Home() {
   return (
@@ -14,9 +13,7 @@ export default function Home() {
       <main>
         <h1>Web</h1>
 
-        <pre>{JSON.stringify(light, null, 2)}</pre>
-        <Button label="Button" />
-        <pre>{JSON.stringify(pancakeLight, null, 2)}</pre>
+        <Button label="Button">Click here</Button>
       </main>
     </>
   );
