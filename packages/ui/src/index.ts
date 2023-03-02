@@ -1,4 +1,5 @@
-export { default as Button } from "./components/Button/Button";
+// Components
+export * from "./components/Button";
 
 // Theme
 export { default as ResetCSS } from "./ResetCSS";

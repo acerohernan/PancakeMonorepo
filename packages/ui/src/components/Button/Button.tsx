@@ -1,17 +1,12 @@
 import React from "react";
-import styled from "styled-components";
-// import StyledButton from "./StyledButton";
-
-const ButtonStyled = styled.button`
-  color: blue;
-`;
+import StyledButton from "./StyledButton";
 
 interface ButtonProps {
   label: string;
 }
 
 const Button: React.FC<ButtonProps> = ({ label }) => (
-  <ButtonStyled type="button">{label}</ButtonStyled>
+  <StyledButton type="button">{label}</StyledButton>
 );
 
 export default Button;

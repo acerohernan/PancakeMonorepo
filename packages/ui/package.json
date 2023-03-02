@@ -33,7 +33,7 @@
     "@storybook/testing-library": "^0.0.13",
     "@types/styled-components": "^5.1.26",
     "babel-loader": "^8.3.0",
-    "rollup": "^3.17.2",
+    "rollup": "^2.47.0",
     "styled-components": "^5.3.6"
   },
   "peerDependencies": {

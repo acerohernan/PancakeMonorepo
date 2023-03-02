@@ -1,8 +1,6 @@
 import Head from "next/head";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { light } from "@acerohernan/pancakeui";
-// import { light } from "@pancakeswap/uikit";
-// import { light as aceroLight } from "@acerohernan/ui-kit";
+import { light, Button } from "@acerohernan/pancakeui";
+import { light as pancakeLight } from "@pancakeswap/uikit";
 
 export default function Home() {
   return (
@@ -17,6 +15,8 @@ export default function Home() {
         <h1>Web</h1>
 
         <pre>{JSON.stringify(light, null, 2)}</pre>
+        <Button label="Button" />
+        <pre>{JSON.stringify(pancakeLight, null, 2)}</pre>
       </main>
     </>
   );
