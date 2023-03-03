@@ -1,13 +1,14 @@
 import ResetCSS from "../src/ResetCSS";
+import ModalProvider from "../src/widgets/Modal/ModalContext";
 import { withThemesProvider } from "themeprovider-storybook";
 import light from "../src/theme/light";
 import dark from "../src/theme/dark";
 
 const globalDecorator = (StoryFn) => (
-  <>
+  <ModalProvider>
     <StoryFn />
     <ResetCSS />
-  </>
+  </ModalProvider>
 );
 
 export const parameters = {

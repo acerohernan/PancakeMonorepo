@@ -1,3 +1,4 @@
+import { ModalTheme } from "../widgets/Modal/types";
 import { Breackpoints, Colors, MediaQueries, Radii, Shadows, Spacing, ZIndices } from "./types";
 
 export interface PancakeTheme {
@@ -10,6 +11,9 @@ export interface PancakeTheme {
   shadows: Shadows;
   radii: Radii;
   zIndices: ZIndices;
+
+  // Widgets
+  modal: ModalTheme;
 }
 
 export { darkColors, lightColors } from "./colors";
