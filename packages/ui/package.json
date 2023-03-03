@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "rm -rf ./dist && rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist",
-    "lint": "eslint src/**/*.{js,ts,jsx,tsx}",
+    "lint": "eslint src/**/*.{js,ts,jsx,tsx} --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "format": "prettier --write src/**/*.{js,ts,jsx,tsx}"
@@ -45,6 +45,7 @@
     "styled-components": "^5.3.6"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "styled-system": "^5.1.5"
   }
 }

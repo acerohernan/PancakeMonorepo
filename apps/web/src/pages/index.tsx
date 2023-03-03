@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Button } from "@acerohernan/pancakeui";
+import { Button, Flex, IconButton, LogoIcon } from "@acerohernan/pancakeui";
 
 export default function Home() {
   return (
@@ -12,8 +12,12 @@ export default function Home() {
       </Head>
       <main>
         <h1>Web</h1>
-
-        <Button label="Button">Click here</Button>
+        <Flex alignItems="center" style={{ gap: "10px" }}>
+          <Button label="Button">Click here</Button>
+          <IconButton>
+            <LogoIcon spin />
+          </IconButton>
+        </Flex>
       </main>
     </>
   );
