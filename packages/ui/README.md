@@ -31,6 +31,26 @@ import { ResetCSS } from "@acerohernan/pancakeui";
 <ResetCSS />;
 ```
 
+### ModalProvider
+
+If you want you a built-in Modal component, you must add the _Modal Provider_ in your app
+
+```tsx
+import { ModalProvider } from "@acerohernan/pancakeui";
+
+<ModalProvider>...</ModalProvider>;
+```
+
+And to use the modal you have avaliable the _useModal_ hook that receives the Modal component as the first argument and returns an array with the open handler as the first element and the close handler as the second element
+
+```tsx
+import { useModal, Modal, Button } from "@acerohernan/pancakeui";
+
+const [openHandler, closeHandler] = useModal(<Modal>...</Modal>);
+
+<Button onClick={openHandler}>Open modal</Button>;
+```
+
 ### Types
 
 This project is built with Typescript and export all the relevant types.
