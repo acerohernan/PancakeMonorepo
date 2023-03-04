@@ -70,8 +70,7 @@ const ModalProvider: React.FC<PropsWithChildren> = ({ children }) => {
       onPresent: handlePresent,
       onDismiss: handleDismiss,
     }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
+    [isOpen, modalNode, nodeId]
   );
 
   return (

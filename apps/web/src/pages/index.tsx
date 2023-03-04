@@ -1,7 +1,17 @@
 import Head from "next/head";
-import { Button, Flex, IconButton, LogoIcon } from "@acerohernan/pancakeui";
+import { Button, Flex, IconButton, LogoIcon, Modal, useModal } from "@acerohernan/pancakeui";
+import { ModalProps } from "@pancakeswap/uikit";
+
+const ModalExample: React.FC<ModalProps> = ({ title, onDismiss }) => (
+  <Modal onDismiss={onDismiss} title={title}>
+    <h1>Hi everyone!</h1>
+    <Button>I do nothing</Button>
+  </Modal>
+);
 
 export default function Home() {
+  const [onPresent] = useModal(<ModalExample title="Title example" />);
+
   return (
     <>
       <Head>
@@ -13,7 +23,9 @@ export default function Home() {
       <main>
         <h1>Web</h1>
         <Flex alignItems="center" style={{ gap: "10px" }}>
-          <Button label="Button">Click here</Button>
+          <Button label="Button" onClick={onPresent}>
+            Click here
+          </Button>
           <IconButton>
             <LogoIcon spin />
           </IconButton>
