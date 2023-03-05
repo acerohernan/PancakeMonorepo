@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Scales, scaleKeys, ScaleKeys, scales, PancakeToggleProps, HandleProps } from "./types";
+import { ScaleKeys, scales, PancakeToggleProps, HandleProps, InputProps } from "./types";
 
 const scaleKeyValues = {
   sm: {
@@ -81,5 +81,115 @@ export const PancakeStack = styled.div<HandleProps>`
 
   .pancake {
     background: #e27c31;
+    border-radius: 58%;
+    width: ${getScale("pancakeSize")};
+    height: ${getScale("pancakeSize")};
+    position: absolute;
+    transition: 0.4s ease;
+    top: 2px;
+    left: 4px;
+    box-shadow: 0 ${getScale("pancakeThickness")} 0 ${getScale("pancakeThickness")} #fbbe7c;
   }
+
+  .pancake:nth-child(1) {
+    background: ${({ theme }) => theme.pancakeToggle.handleBackground};
+    box-shadow: 0 ${getScale("pancakeThickness")} 0 ${getScale("pancakeThickness")}
+      ${({ theme }) => theme.pancakeToggle.handleShadow};
+  }
+
+  .pancake:nth-child(2) {
+    left: 0;
+    top: ${getScale("pancakeTwoOffset")};
+    transform: scale(0);
+    transition: 0.2s ease 0.2s;
+  }
+  .pancake:nth-child(3) {
+    top: ${getScale("pancakeThreeOffset")};
+    transform: scale(0);
+    transition: 0.2s ease 0.2s;
+  }
+
+  .pancake:nth-child(3)::before,
+  .pancake:nth-child(3)::after {
+    content: "";
+    position: absolute;
+    background: #ef8927;
+    border-radius: 20px;
+    width: 50%;
+    height: 20%;
+  }
+
+  .pancake:nth-child(3)::before {
+    top: ${getScale("butterSmearOneTop")};
+    left: ${getScale("butterSmearOneLeft")};
+  }
+
+  .pancake:nth-child(3)::after {
+    top: ${getScale("butterSmearTwoTop")};
+    left: ${getScale("butterSmearTwoRight")};
+  }
+
+  .butter {
+    width: ${getScale("butterWidth")};
+    height: ${getScale("butterHeight")};
+    background: #fbdb60;
+    top: ${getScale("butterTop")};
+    left: ${getScale("butterLeft")};
+    position: absolute;
+    border-radius: ${getScale("butterRadius")};
+    box-shadow: ${getScale("butterThickness")} 0 ${getScale("butterThickness")} #d67823;
+    transform: scale(0);
+    transition: 0.2s ease;
+  }
+`;
+
+export const PancakeInput = styled.input<InputProps>`
+  height: 40px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 40px;
+
+  &:focus + label {
+    box-shadow: ${({ theme }) => theme.shadows.focus};
+  }
+
+  &:checked + label .pancakes {
+    transform: translateX(${getScale("travelDistance")});
+  }
+
+  &:checked + label .pacanke:nth-child(1) {
+    background: #e27c31;
+    box-shadow: 0 ${getScale("pancakeThickness")} 0 ${getScale("pancakeThickness")} #fbbe7c;
+    transition-delay: 0.2s;
+  }
+
+  &:checked + label .pancake:nth-child(2) {
+    transform: scale(1);
+    transition-delay: 0.2s;
+  }
+
+  &:checked + label .pancake:nth-child(3) {
+    transform: scale(1);
+    transition-delay: 0.4s;
+  }
+
+  &:checked + label .butter {
+    transform: scale(1);
+    transition-delay: 0.6s;
+  }
+`;
+
+export const PancakeLabel = styled.label<PancakeToggleProps>`
+  width: ${getScale("toggleWidth")};
+  height: ${getScale("toggleHeight")};
+  background: ${({ theme, checked }) => theme.colors[checked ? "success" : "input"]};
+  box-shadow: ${({ theme }) => theme.shadows.inset};
+  display: inline-block;
+  border-radius: 50px;
+  position: relative;
+  transition: all 0.3s ease;
+  transform-origin: 20% center;
+  cursor: pointer;
 `;
